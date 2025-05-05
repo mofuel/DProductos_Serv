@@ -63,12 +63,6 @@ El robot puede desplazarse por ambientes controlados, evitar obstáculos, y entr
    - Desde la web: programa horarios y verifica historial.
    - Por voz: activa comandos predefinidos conectados al backend.
 
-## 📸 Vista previa (opcional)
-
-_Aquí podrías insertar un GIF o imagen del robot funcionando._
-
-![Robot en acción](ruta/a/tu/imagen.gif)
-
 ## 🤝 Contribuciones
 
 ¡Toda ayuda es bienvenida! Puedes hacer fork del proyecto, proponer mejoras o reportar errores.
