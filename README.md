@@ -1,55 +1,79 @@
-# Robot Asistente Tradicional sobre Ruedas
+# 🤖 Robot Asistente Tradicional sobre Ruedas
 
-## Descripción
+![Estado del proyecto](https://img.shields.io/badge/Estado-En%20desarrollo-yellow)
+![Licencia](https://img.shields.io/badge/Licencia-MIT-green)
+![Tecnología](https://img.shields.io/badge/Hecho%20con-Arduino%20%7C%20Spring%20Boot-blue)
 
-El **Robot Asistente Tradicional sobre Ruedas** está diseñado como un prototipo funcional para asistir a personas en tareas diarias como la entrega de medicamentos. Equipado con un sistema de control por voz y sensores para evitar obstáculos, este robot tiene la capacidad de navegar de forma autónoma en entornos controlados, facilitando la movilidad y aumentando la independencia de las personas que lo usan.
+## 🚀 Descripción
 
-El robot es capaz de recibir comandos de voz, desplazarse sin chocar con objetos, y entregar medicamentos a la hora programada, sin la intervención de un tercero. La estructura modular del robot permite futuras ampliaciones, como la inclusión de cámaras y otros dispositivos interactivos para una experiencia más completa.
+El **Robot Asistente Tradicional sobre Ruedas** es un prototipo funcional enfocado en la entrega automatizada de medicamentos. Su diseño permite asistir a personas en el hogar, brindándoles mayor independencia y seguridad. Se controla mediante comandos de voz y una aplicación web responsiva, combinando movilidad autónoma con inteligencia programada.
 
-## Características
+El robot puede desplazarse por ambientes controlados, evitar obstáculos, y entregar medicamentos en horarios programados sin necesidad de intervención humana directa. Además, permite la integración de mejoras futuras como cámaras inteligentes o sensores adicionales.
 
-- **Movilidad Autónoma**: El robot se mueve de manera autónoma utilizando motores DC y sensores ultrasónicos para evitar obstáculos.
-- **Entrega de Medicamentos**: Cuenta con un compartimento automático que abre en el momento indicado para que el usuario pueda acceder al medicamento sin esfuerzo.
-- **Control por Voz**: Los usuarios pueden interactuar con el robot a través de comandos de voz, como "llevarme a la cocina" o "entregar medicamento".
-- **Pantalla LCD para Videollamadas**: Integrado con una cámara y un altavoz, el robot puede realizar videollamadas mediante comandos de voz, brindando apoyo adicional.
-- **Seguridad**: Los sensores de proximidad y los motores con retroalimentación aseguran que el robot se desplace de manera segura sin chocar con personas u objetos.
-- **Interfaz de Control Remota**: Control mediante una aplicación web responsiva, permitiendo la gestión de horarios de medicación y la confirmación de entrega.
+## ✨ Características
 
-## Construido con
+| Funcionalidad                  | Descripción                                                                 |
+|-------------------------------|-----------------------------------------------------------------------------|
+| 🕹️ Movilidad Autónoma         | Se desplaza con sensores ultrasónicos y motores DC para evitar obstáculos. |
+| 💊 Entrega Programada         | Compartimento que se abre automáticamente a la hora indicada.              |
+| 🎤 Control por Voz            | Comandos como “entregar medicamento” o “ir a la sala”.                     |
+| 📹 Videollamadas              | Pantalla LCD con cámara y altavoz para comunicación remota.                |
+| 🔒 Seguridad Integrada        | Evita colisiones gracias a sensores de proximidad.                         |
+| 🌐 App Web de Control         | Interfaz responsiva para gestionar horarios y confirmar entregas.          |
 
-- **Hardware**:
-  - Arduino (para controlar motores, sensores y sistema de apertura)
-  - Raspberry Pi (para procesamiento de voz, videollamadas y control avanzado)
-  - Sensores ultrasónicos
-  - Motores DC
-  - Cámara USB
-  - Pantalla LCD
-  - Altavoces y micrófono
+## 🧰 Construido con
 
-- **Software**:
-  - **Lenguajes**: Java, Python, HTML, JavaScript, CSS
-  - **Frameworks**: Spring Boot (para el backend de la app web)
-  - **Bases de datos**: MySQL (para registrar entregas y confirmaciones de medicamentos)
-  - **Tecnologías**:
-    - API REST para comunicación entre la aplicación web y el robot
+### 🔌 Hardware
+- Arduino UNO/Nano
+- Raspberry Pi 4
+- Sensores ultrasónicos
+- Motores DC
+- Módulo de control de motor L298N
+- Pantalla LCD
+- Cámara USB
+- Micrófono y altavoces
+- Servomotor para apertura de compartimento
 
-## Instalación
+### 💻 Software
+- **Lenguajes**: Java, Python, HTML, JavaScript, CSS
+- **Frameworks**: Spring Boot (backend), Bootstrap (frontend)
+- **Base de Datos**: MySQL
+- **Otras tecnologías**: API REST, comunicación serial Pi ↔ Arduino
 
-Para ejecutar este proyecto, sigue los siguientes pasos:
+## 🧪 Escenarios de Prueba
 
-1. **Hardware**:
-   - Conecta el Arduino a la Raspberry Pi a través de USB o puerto serial.
-   - Asegúrate de que los sensores ultrasónicos y motores DC estén conectados correctamente a los pines de Arduino.
-   - Conecta la pantalla LCD, cámara, micrófono y altavoces a la Raspberry Pi.
+1. ✅ **El robot entrega el medicamento a la hora programada.**
+2. ✅ **El usuario puede revisar el historial de entregas y confirmaciones.**
+3. ✅ **El compartimento se abre correctamente al recibir orden desde la app o por voz.**
 
+## 📦 Instalación
 
+1. **Configuración de Hardware**:
+   - Conecta el Arduino a la Raspberry Pi por USB o puerto serial.
+   - Conecta sensores, motores, LCD y servos a Arduino según el esquema.
+   - Instala la cámara, micrófono y altavoces en la Raspberry Pi.
 
-3. **Acceder al robot**:
-   - A través de la aplicación web, puedes gestionar los horarios de medicación, enviar comandos al robot y ver el estado de las entregas.
+2. **Aplicación Web**:
+   - Clona el repositorio.
+   - Configura el archivo `application.properties` con los datos de conexión a MySQL.
+   - Ejecuta el backend con `Spring Boot`.
+   - Accede desde el navegador a la app en `http://localhost:8080`.
 
+3. **Control del Robot**:
+   - Desde la web: programa horarios y verifica historial.
+   - Por voz: activa comandos predefinidos conectados al backend.
 
-## Licencia
+## 📸 Vista previa (opcional)
 
-Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo `LICENSE`.
+_Aquí podrías insertar un GIF o imagen del robot funcionando._
 
----
+![Robot en acción](ruta/a/tu/imagen.gif)
+
+## 🤝 Contribuciones
+
+¡Toda ayuda es bienvenida! Puedes hacer fork del proyecto, proponer mejoras o reportar errores.
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más información.
+
