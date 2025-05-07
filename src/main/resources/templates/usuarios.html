@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil de Usuario</title>
+</head>
+<body>
+<h1>Información del Usuario</h1>
+
+<div th:if="${usuario != null}">
+    <p><strong>Nombre:</strong> <span th:text="${usuario.nombre}"></span></p>
+    <p><strong>DNI:</strong> <span th:text="${usuario.dni}"></span></p>
+    <p><strong>Correo:</strong> <span th:text="${usuario.correo}"></span></p>
+    <p><strong>Registrado desde:</strong> <span th:text="${usuario.createdAt}"></span></p>
+</div>
+
+<div th:if="${usuario == null}">
+    <p>No se encontró al usuario.</p>
+</div>
+
+</body>
+</html>
