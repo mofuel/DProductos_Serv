@@ -1,0 +1,61 @@
+/* Contenedor del perfil */
+.perfil-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.perfil-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0d1b2a;
+}
+
+/* Etiquetas */
+.perfil-container label {
+  font-weight: 600;
+  color: #084c61;
+}
+
+/* Estilo de los inputs */
+.perfil-container input[type="text"],
+.perfil-container input[type="email"],
+.perfil-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+/* Estilo de los inputs cuando se enfocan */
+.perfil-container input:focus {
+  border-color: #084c61;
+  outline: none;
+}
+
+/* Botón */
+.perfil-container .btn-primary {
+  width: auto;  /* Ajusta el tamaño al contenido */
+  background-color: #5bc0de;  /* Azul claro */
+  color: white;
+  border: none;
+  padding: 10px 20px;  /* Añade más espacio en los bordes */
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  display: inline-block;  /* Asegura que el botón no ocupe todo el ancho */
+}
+
+/* Cambio de color cuando el botón es hover */
+.perfil-container .btn-primary:hover {
+  background-color: #31b0d5;  /* Un azul ligeramente más oscuro */
+}
