@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Registro</title>
+    <link rel="stylesheet" th:href="@{/css/registroStyle.css}">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-section" id="registerForm">
+        <h2>Registro</h2>
+        <form th:action="@{/registro}" th:object="${registerDTO}" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" th:field="*{nombre}" placeholder="Tu nombre" required />
+            </div>
+
+            <div class="form-group">
+                <label for="dni">DNI</label>
+                <input type="text" th:field="*{dni}" placeholder="Tu DNI" required />
+            </div>
+
+            <div class="form-group">
+                <label for="correoRegistro">Correo electrónico</label>
+                <input type="email" th:field="*{email}" placeholder="Correo electrónico" required />
+            </div>
+
+            <div class="form-group">
+                <label for="passwordRegistro">Contraseña</label>
+                <input type="password" th:field="*{password}" placeholder="Contraseña segura" required />
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar contraseña</label>
+                <input type="password" th:field="*{confirmpassword}" placeholder="Repite tu contraseña" required />
+            </div>
+            <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="alert alert-danger"></div>
+
+            <button type="submit" class="btn">Registrarse</button>
+            <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión aquí</a></p>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

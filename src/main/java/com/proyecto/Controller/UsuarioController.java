@@ -4,10 +4,13 @@ import com.proyecto.Model.Usuario;
 import com.proyecto.Repository.UsuarioRepository;
 import com.proyecto.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.Optional;
 
 @Controller
@@ -31,4 +34,11 @@ public class UsuarioController {
     public Usuario registrar(@RequestBody Usuario usuario) {
         return usuarioService.guardar(usuario);
     }
+
+
+
+
+
+
+
 }

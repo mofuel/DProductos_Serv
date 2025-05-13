@@ -1,0 +1,58 @@
+/* Estilos para la barra de navegación */
+.navbar {
+  background-color: #add8e6; /* Celeste claro */
+  padding: 0.5rem 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  z-index: 5; /* Prioridad sobre carousel */
+}
+
+.carousel {
+  z-index: 1;
+}
+
+/* Estilos para el logo de la navbar */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+/* Estilos para los enlaces de la navbar */
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem; /* Espacio entre links */
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  color: #0d1b2a;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #084c61;
+  text-decoration: none;
+}
+
+/* Estilos para el botón del navbar-toggler */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
