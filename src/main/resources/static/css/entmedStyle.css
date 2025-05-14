@@ -1,0 +1,49 @@
+/* Estilos personalizados para la página entregamedicamentos */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+select.form-control {
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+#simulacionEntrega,
+#confirmacionEntrega {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #add8e6;
+    padding: 10px 0;
+}
+
+footer .container {
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    width: 120px;
+}
+
+button.btn-success {
+    background-color: #28a745;
+}
+
+button.btn-danger {
+    background-color: #dc3545;
+}
+
+#puntos {
+    font-weight: bold;
+}
