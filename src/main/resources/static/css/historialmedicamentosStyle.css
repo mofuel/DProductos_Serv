@@ -1,0 +1,90 @@
+/* Estilo general de la sección */
+.seccion-historial {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de la sección */
+.titulo-historial {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Estilos de la tabla */
+.seccion-historial .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.seccion-historial .table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.seccion-historial .table th,
+.seccion-historial .table td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.seccion-historial .table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Colores para texto de estado */
+.seccion-historial .text-success {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.seccion-historial .text-danger {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.historial-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.historial-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #333;
+}
+
+.historial-tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.historial-tabla th,
+.historial-tabla td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+.historial-tabla th {
+    background-color: #007bff;
+    color: white;
+}
+
+.historial-tabla tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

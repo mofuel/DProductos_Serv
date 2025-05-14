@@ -17,7 +17,10 @@ public class HorarioMedicacion {
     private Usuario usuario;
 
 
-    private String medicamento;
+    @ManyToOne
+    @JoinColumn(name = "medicamento_id", nullable = false)
+    private Medicamento medicamento;
+
 
 
     private LocalTime hora;
@@ -42,9 +45,9 @@ public class HorarioMedicacion {
 
     public void setHora(LocalTime hora) {this.hora = hora;}
 
-    public String getMedicamento() {return medicamento;}
+    public Medicamento getMedicamento() {return medicamento;}
 
-    public void setMedicamento(String medicamento) {this.medicamento = medicamento;}
+    public void setMedicamento(Medicamento medicamento) {this.medicamento = medicamento;}
 
     public LocalDate getFecha() {return fecha;}
 

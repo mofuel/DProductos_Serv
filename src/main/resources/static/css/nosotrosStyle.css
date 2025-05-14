@@ -1,0 +1,47 @@
+body {
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+section {
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  color: #34495e;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+#nosotros, #alcance {
+  background-color: #f8f9fa;
+}

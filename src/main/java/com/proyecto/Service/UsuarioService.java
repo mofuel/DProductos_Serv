@@ -30,6 +30,11 @@ public class UsuarioService {
         return usuarioRepository.findByCorreo(correo);  // No es necesario orElse(null), ya que findByCorreo devuelve un Optional
     }
 
+    public Usuario findByCorreo(String correo) {
+        return usuarioRepository.findByCorreo(correo)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+    }
+
 
     public boolean existeCorreo(String correo) {
         return usuarioRepository.existsByCorreo(correo);

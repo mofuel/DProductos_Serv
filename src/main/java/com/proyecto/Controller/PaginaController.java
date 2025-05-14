@@ -1,5 +1,6 @@
 package com.proyecto.Controller;
 
+import com.proyecto.Model.Medicamento;
 import com.proyecto.Model.registerDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +14,9 @@ public class PaginaController {
         return "index";
     }
 
-    @GetMapping("/contactanos")
+    @GetMapping("/nosotros")
     public String mostrarContactanos(){
-        return "contactanos";
+        return "nosotros";
     }
 
     @GetMapping("/login")
@@ -28,4 +29,8 @@ public class PaginaController {
         model.addAttribute("registerDTO", new registerDTO());
         return "registro";
     }
+
+
+
+
 }
