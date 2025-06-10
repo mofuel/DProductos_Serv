@@ -47,3 +47,70 @@ button.btn-danger {
 #puntos {
     font-weight: bold;
 }
+
+
+#contenedor {
+  position: relative;
+  width: 400px; /* 10 columnas * 40px tileSize */
+  height: 400px; /* 10 filas * 40px tileSize */
+  margin: 20px auto;
+}
+
+canvas {
+  background: #222;
+  border: 3px solid #555;
+  display: block;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #2196f3;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  margin: 5px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #1769aa;
+}
+
+/* Icono móvil del robot */
+.icono-movil {
+  position: absolute;
+  font-size: 36px;
+  color: #ffcc00; /* amarillo */
+  transition: left 0.1s linear, top 0.1s linear;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Iconos fijos como personas, camas, etc. */
+.icono-fijo {
+  position: absolute;
+  font-size: 36px;
+  color: #00ccff; /* azul */
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* Iconos generales del mapa (ej: cama, escritorio, puerta) */
+.map-icon {
+  position: absolute;
+  font-size: 28px;              /* + tamaño */
+  color: #A0522D;               /* marrón tipo madera */
+  pointer-events: none;
+  z-index: 10;
+
+  /* centrado perfecto */
+  transform: translate(-50%, -50%);
+}
+
+/* o solo para el sofá concreto */
+.map-icon.fa-couch {
+  color: #A0522D; /* sienna */
+}
+

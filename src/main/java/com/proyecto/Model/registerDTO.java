@@ -14,7 +14,7 @@ public class registerDTO {
     @Email
     private String email;
 
-    @Size(min = 2, message = "La contraseña debe tener al menos 2 caracteres")
+    @Size(min = 6, message = "La contraseña debe tener al menos 6 caracteres")
     private String password;
 
     @NotEmpty
