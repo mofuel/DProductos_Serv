@@ -14,6 +14,12 @@ public class PaginaController {
         return "index";
     }
 
+    @GetMapping("/dashboard")
+    public String mostrarDashboard(){
+        return "dashboard";
+    }
+
+
     @GetMapping("/nosotros")
     public String mostrarContactanos(){
         return "nosotros";

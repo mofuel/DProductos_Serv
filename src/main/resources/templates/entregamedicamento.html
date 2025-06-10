@@ -11,7 +11,10 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/footerStyle.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-oHgNSj8a0l3/..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <meta name="_csrf" th:content="${_csrf.token}"/>
     <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 
@@ -37,6 +40,17 @@
     <p>¿Tomó el medicamento?</p>
     <button class="btn btn-success" onclick="confirmarEntrega(true)">Sí</button>
     <button class="btn btn-danger" onclick="confirmarEntrega(false)">No</button>
+</div>
+
+<div id="simulacionEntrega">
+    <h2>Mapa con Robot y Persona</h2>
+    <div id="contenedor">
+        <canvas id="mapa" width="400" height="400"></canvas>
+        <i id="robotIcon" class="fa-solid fa-robot icono-movil"></i>
+        <i id="personaIcon" class="fa-solid fa-person icono-fijo"></i>
+    </div>
+
+    <button id="moverBtn" disabled>Mover Robot</button>
 </div>
 
 <!-- Footer -->

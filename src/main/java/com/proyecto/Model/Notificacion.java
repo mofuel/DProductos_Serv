@@ -33,7 +33,7 @@ public class Notificacion {
 
 
     public enum EstadoNotificacion {
-        PENDIENTE, ENVIADA, FALLIDA
+        pendiente, enviada, fallida
     }
 
     public Long getId() {return id;}

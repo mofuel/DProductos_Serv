@@ -23,16 +23,18 @@ import java.util.Collection;
 public class SecurityConfig {
 
     private final LoginService loginService;
+    private final CustomAuthenticationSuccessHandler successHandler;
 
-    public SecurityConfig(LoginService loginService) {
+    public SecurityConfig(LoginService loginService, CustomAuthenticationSuccessHandler successHandler) {
         this.loginService = loginService;
+        this.successHandler = successHandler;
     }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/actuator", "/actuator/prometheus", "/index", "/contactanos", "/registro", "/nosotros", "/login", "/logout").permitAll()
+                        .requestMatchers("/actuator", "/dashboard", "/index", "/contactanos", "/registro", "/nosotros", "/login", "/logout", "/robot/mover").permitAll()
                         .requestMatchers("/css/**", "/img/**", "/js/**", "/fragments/**").permitAll()
                         .anyRequest().authenticated()
                 )
@@ -40,7 +42,7 @@ public class SecurityConfig {
                         .loginPage("/login")
                         .usernameParameter("email")
                         .passwordParameter("password")
-                        .defaultSuccessUrl("/index", true)
+                        .successHandler(successHandler)
                         .permitAll()
                 )
                 .logout(logout -> logout
