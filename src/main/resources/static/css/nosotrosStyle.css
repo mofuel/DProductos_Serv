@@ -1,47 +1,74 @@
 body {
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  color: #333;
-}
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-section {
-  padding: 2rem 1rem;
-}
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #0d6efd;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-}
+    section {
+      padding: 4rem 0;
+    }
 
-h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #2c3e50;
-}
+    .section-box {
+      background: white;
+      border-radius: 1.25rem;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
 
-h3 {
-  margin-top: 1.5rem;
-  color: #34495e;
-}
+    .icon-title {
+      font-size: 2.5rem;
+      color: #0d6efd;
+    }
 
-p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
+    .ods .list-group-item::before {
+      content: "🌍";
+      margin-right: 8px;
+    }
 
-ul {
-  padding-left: 1.5rem;
-  font-size: 1.1rem;
-  color: #555;
-}
+    .value ul li::before {
+      content: "🤖";
+      margin-right: 8px;
+    }
 
-li {
-  margin-bottom: 0.5rem;
-}
+    .call-to-action {
+      background-color: #e2edff;
+    }
 
-#nosotros, #alcance {
-  background-color: #f8f9fa;
-}
+    .btn-primary {
+      padding: 0.7rem 1.8rem;
+      font-size: 1.1rem;
+      border-radius: 2rem;
+      box-shadow: 0 5px 10px rgba(13, 110, 253, 0.3);
+    }
+
+    .bi-check-circle-fill {
+      color: #198754;
+    }
+
+    .bi-lightbulb-fill {
+      color: #ffc107;
+    }
+
+    .bi-heart-pulse-fill {
+      color: #dc3545;
+    }
+
+    .bi-robot {
+      color: #0dcaf0;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+    }
+
+    /* Animaciones si se usa AOS */
+    [data-aos] {
+      transition: all 0.5s ease-in-out;
+    }

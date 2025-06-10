@@ -1,8 +1,8 @@
 <!-- navbar INICIO -->
-<nav class="navbar navbar-expand-lg navbar-light" th:fragment="nav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm" th:fragment="nav">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img th:src="@{/img/logg.png}" alt="Logo" class="logo-img">
+            <img th:src="@{/img/log3.png}" alt="Logo" class="logo-img">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -12,26 +12,29 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <!-- Muestra el link solo si el usuario no está autenticado -->
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/index}">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/informacion}">Lumo</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/nosotros}">Nosotros</a>
+                </li>
+
                 <li class="nav-item" sec:authorize="!isAuthenticated()">
-                    <a class="nav-link active" th:href="@{/login}">Iniciar Sesión</a>
+                    <a class="nav-link" th:href="@{/login}">Iniciar Sesión</a>
                 </li>
 
-                <!-- Otros enlaces del navbar -->
-                <li class="nav-item">
-                    <a class="nav-link active" th:href="@{/index}">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" th:href="@{/nosotros}">Nosotros</a>
-                </li>
-
-
-                <!-- Muestra el nombre del usuario si está autenticado -->
                 <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         Bienvenido, <strong th:text="${#authentication.name}"></strong>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" th:href="@{/perfil}">Perfil</a></li>
                         <li>
                             <form method="post" action="/logout" class="d-inline">
@@ -41,6 +44,7 @@
                         </li>
                     </ul>
                 </li>
+
             </ul>
         </div>
     </div>
