@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/indexStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/navStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/footerStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/infoStyle.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-oHgNSj8a0l3/..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+
+<!-- Navbar -->
+<div th:replace="~{fragments/nav :: nav}"></div>
+
+
+
+<main class="content">
+    <h1 data-aos="fade-down">Lumo</h1>
+
+    <div class="diagram-container">
+        <!-- Caja izquierda -->
+        <div class="info-box" data-aos="fade-right">
+            <strong>Sensores:</strong> Equipado con sensores LIDAR y giroscopios para navegación autónoma.
+        </div>
+
+        <!-- Imagen central -->
+        <div class="robot-container" data-aos="zoom-in">
+            <img th:src="@{/img/robot.png}" alt="Robot asistente" class="robot-image">
+        </div>
+
+        <!-- Cajas derechas -->
+        <div class="info-column" data-aos="fade-left">
+            <div class="info-box">
+                <strong>Panel frontal:</strong> Incluye pantalla táctil y cámara para reconocimiento facial.
+            </div>
+            <div class="info-box">
+                <strong>Ruedas:</strong> Usa motores con tracción diferencial y sensores de proximidad para evitar obstáculos.
+            </div>
+        </div>
+    </div>
+</main>
+
+<section class="robot-intro" data-aos="fade-up">
+    <h2>Conóceme</h2>
+    <p>
+        ¡Hola! Soy <strong>Lumo</strong>, un robot asistente creado para mejorar la calidad de vida de personas con movilidad reducida.
+        Estoy equipado con sensores inteligentes, reconocimiento facial y una interfaz amigable para ayudarte en tu día a día.
+        Desde entregar medicamentos hasta guiarte dentro del hogar, estoy aquí para asistirte de forma segura y eficiente.
+    </p>
+</section>
+
+
+
+
+
+<!-- Footer -->
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
+</body>
+</html>

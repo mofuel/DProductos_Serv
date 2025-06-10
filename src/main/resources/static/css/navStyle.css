@@ -1,58 +1,67 @@
-/* Estilos para la barra de navegación */
+/* Colores principales */
+:root {
+  --primary: #1e3a8a;         /* Azul oscuro */
+  --secondary: #60a5fa;       /* Azul celeste */
+  --text-light: #f9fafb;      /* Casi blanco */
+  --text-dark: #0f172a;       /* Azul muy oscuro */
+  --hover-color: #3b82f6;     /* Azul medio para hover */
+  --accent: #34d399;          /* Verde menta suave */
+}
+
+/* Navbar base */
 .navbar {
-  background-color: #add8e6; /* Celeste claro */
+  background-color: #0f172a; /* Azul marino casi negro */
   padding: 0.5rem 1rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  z-index: 5; /* Prioridad sobre carousel */
+  z-index: 5;
+  height: 80px;
+  overflow: hidden;
 }
 
-.carousel {
-  z-index: 1;
-}
-
-/* Estilos para el logo de la navbar */
-.navbar-brand {
-  display: flex;
-  align-items: center;
-}
 
 .logo-img {
-  height: 70px;
+  max-height: 55px;
   width: auto;
   object-fit: contain;
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
-/* Estilos para los enlaces de la navbar */
-.navbar-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1rem; /* Espacio entre links */
-}
-
-.navbar-nav .nav-item {
-  margin-right: 20px;
-}
-
-.nav-link {
-  color: #0d1b2a;
+/* Enlaces de navegación */
+.navbar-nav .nav-link {
+  color: var(--text-light);
   font-weight: 500;
-  transition: color 0.2s ease;
+  margin-right: 1.5rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.nav-link:hover {
-  color: #084c61;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--accent);
   text-decoration: none;
 }
 
-/* Estilos para el botón del navbar-toggler */
-.navbar-toggler {
+/* Dropdown */
+.dropdown-menu {
+  background-color: var(--primary);
   border: none;
 }
 
-.navbar-toggler:focus {
-  outline: none;
-  box-shadow: none;
+.dropdown-menu .dropdown-item {
+  color: var(--text-light);
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: var(--hover-color);
+  color: var(--text-light);
+}
+
+/* Toggler */
+.navbar-toggler {
+  border: none;
+  background-color: var(--secondary);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
