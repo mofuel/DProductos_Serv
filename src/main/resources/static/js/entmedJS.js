@@ -355,53 +355,54 @@ function dibujarRuta(ruta) {
 const boton = document.getElementById('moverBtn');
 
 boton.addEventListener('click', () => {
-  boton.disabled = true; // deshabilita botón para evitar clicks múltiples
+  boton.disabled = true;
 
+  let timerInterval;
   Swal.fire({
     title: 'Calculando ruta óptima',
     html: 'Espere <b></b> segundos...',
     timer: 3000,
     timerProgressBar: true,
+    showCancelButton: true,
+    cancelButtonText: 'Cancelar',
+    allowOutsideClick: false,
+    allowEscapeKey: false,
     didOpen: () => {
       Swal.showLoading();
       const b = Swal.getHtmlContainer().querySelector('b');
-      let timerInterval = setInterval(() => {
+      timerInterval = setInterval(() => {
         b.textContent = Math.ceil(Swal.getTimerLeft() / 1000);
       }, 100);
-      setTimeout(() => clearInterval(timerInterval), 3000);
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
     }
-  }).then(() => {
+  }).then((result) => {
+    if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire('Cancelado', 'El cálculo de la ruta fue cancelado.', 'info');
+      boton.disabled = false;
+      return;
+    }
+
+    // Aquí continúa el flujo normal si no se canceló
     const csrfToken = document.querySelector('meta[name="_csrf"]').getAttribute('content');
     const csrfHeader = document.querySelector('meta[name="_csrf_header"]').getAttribute('content');
 
-    // Supongamos que 'inicio' y 'destino' tienen la estructura { row: ..., col: ... }
-    // 'usuario' es un objeto con datos del usuario actual, debes tenerlo definido antes.
-    // 'ruta' es un array con los pasos calculados [{ row: ..., col: ... }, ...]
-    // 'distanciaCalculada', 'nodosExplorados' y 'tiempoCalculo' también deben estar definidos.
-
+    const tiempoInicio = performance.now();
     ruta = encontrarRuta(inicio, destino);
+    const tiempoFin = performance.now();
 
-    // 2. Calcular distancia (suponiendo que cada paso tiene distancia 1)
-    let distanciaCalculada = 0;
-    for (let i = 1; i < ruta.length; i++) {
-      // Distancia entre pasos consecutivos, aquí es 1 por movimiento ortogonal
-      distanciaCalculada += 1;
-    }
+    let distanciaCalculada = ruta.length > 0 ? ruta.length - 1 : 0;
+    const tiempoCalculo = Math.round(tiempoFin - tiempoInicio);
 
-    // 3. Otros datos (por ejemplo, nodos explorados, tiempo, etc.)
-    // Puedes agregar variables para medir tiempo si quieres
-    const nodosExplorados = 'N/A';  // o calcular según tu lógica
-    const tiempoCalculo = 'N/A';    // o medir con performance.now()
-
-    // Construir el objeto RutaDto a enviar
     const rutaDto = {
-        startRow: inicio.fila,    // o el valor correcto que tengas
-        startCol: inicio.col,
-        endRow: destino.fila,
-        endCol: destino.col,
-        totalDistance: distanciaCalculada, // tu variable con la distancia
-        nodesExplored: null,       // o número real si lo tienes
-        computeTimeMs: null        // o número real si lo tienes
+      startRow: inicio.fila,
+      startCol: inicio.col,
+      endRow: destino.fila,
+      endCol: destino.col,
+      totalDistance: distanciaCalculada,
+      nodesExplored: null,
+      computeTimeMs: tiempoCalculo
     };
 
     fetch('/robot/mover', {
@@ -413,19 +414,10 @@ boton.addEventListener('click', () => {
       body: JSON.stringify(rutaDto)
     })
     .then(res => {
-      if (!res.ok) {
-        throw new Error('Error en el servidor');
-      }
+      if (!res.ok) throw new Error('Error en el servidor');
       return res.json();
     })
     .then(data => {
-      console.log('Respuesta del backend:', data);
-
-      // Aquí puedes usar la ruta que devolvió el backend o la que tengas calculada
-      // Por ejemplo, ruta = data.ruta;
-      // O usar tu función local para encontrar ruta si quieres:
-      // ruta = encontrarRuta(inicio, destino);
-
       if (ruta.length === 0) {
         Swal.fire('No se encontró ruta', '', 'error');
         boton.disabled = false;
@@ -454,6 +446,7 @@ boton.addEventListener('click', () => {
     });
   });
 });
+
 
 function confirmarEntrega(confirmado) {
     const horarioId = document.getElementById("selectMedicamento").value;

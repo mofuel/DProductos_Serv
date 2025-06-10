@@ -19,9 +19,9 @@ public class PaginaController {
         return "dashboard";
     }
 
-    @GetMapping("/informacion")
-    public String mostrarInformacion(){
-        return "informacion";
+    @GetMapping("/manual")
+    public String mostrarManual(){
+        return "manual";
     }
 
 

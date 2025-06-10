@@ -25,6 +25,10 @@
                     <a class="nav-link" th:href="@{/nosotros}">Nosotros</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/manual}">Manual</a>
+                </li>
+
                 <li class="nav-item" sec:authorize="!isAuthenticated()">
                     <a class="nav-link" th:href="@{/login}">Iniciar Sesión</a>
                 </li>
