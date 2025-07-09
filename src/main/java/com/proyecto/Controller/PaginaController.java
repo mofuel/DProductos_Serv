@@ -30,6 +30,13 @@ public class PaginaController {
         return "nosotros";
     }
 
+    @GetMapping("/informacion")
+    public String mostrarInformacion() {
+        return "informacion";
+    }
+
+
+
     @GetMapping("/login")
     public String mostrarLogin() {
         return "login";
